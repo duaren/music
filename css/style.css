@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,700&display=swap");
+body, html {
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  display: none;
+}
+
+header {
+  position: absolute;
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 20;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(100% - 2em);
+  background: white;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+header a.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li a {
+  padding: 1em;
+  font-size: 1em;
+}
+
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+}
+
+.wrapper section {
+  padding: 3em;
+}
+
+.wrapper section h1, .wrapper section h2, .wrapper section .read-btn {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.wrapper section h2 {
+  font-size: 1.4em;
+}
+
+.wrapper section .read-btn {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background: url("../images/arrow.svg") no-repeat;
+  background-size: 8px;
+  background-position: 0 1px;
+  padding-left: 1em;
+}
+
+.wrapper section .primary {
+  padding: 1.5em 1.5em 1.5em calc(3em + 25px);
+  border: 1px solid black;
+  color: white;
+  background-position: 3em;
+  display: inline-block;
+  margin-top: 3em;
+  margin-left: -3em;
+}
+
+.wrapper section .clipper {
+  overflow: hidden;
+}
+
+.wrapper section.guitar {
+  padding-top: 8em;
+  background: url("../images/guitar.jpg");
+  background-size: cover;
+  color: white;
+}
+
+.wrapper section.guitar p {
+  width: 70%;
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.wrapper section.guitar h1 {
+  font-size: 2.4rem;
+}
+
+.wrapper section.sidebar, .wrapper section.subscribe {
+  font-size: .9rem;
+  line-height: 1.6em;
+}
+
+.wrapper section.sidebar {
+  background: #FFCC00;
+}
+
+.wrapper section.sidebar .read-btn {
+  margin-top: 2em;
+  display: block;
+  background-position: 0 .2em;
+}
+
+.wrapper section.subscribe input {
+  width: calc(100% - 2em);
+  padding: 1em;
+  font-family: 'Montserrat';
+  margin-bottom: 1em;
+}
+
+.wrapper section.subscribe button {
+  width: 100%;
+  background: black;
+  color: white;
+  border: 2px solid black;
+  padding: 1em;
+  font-family: 'Montserrat';
+  margin: auto;
+}
+
+@media only screen and (max-width: 375px) {
+  header nav ul li a {
+    padding: .6em;
+    font-size: .8em;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  header {
+    background: none;
+  }
+  header a.logo {
+    color: goldenrod;
+  }
+  .wrapper {
+    -ms-grid-columns: 68% auto;
+        grid-template-columns: 68% auto;
+    -ms-grid-rows: 60% auto;
+        grid-template-rows: 60% auto;
+        grid-template-areas: "guitar featured"
+ "guitar subscribe";
+    height: 100vh;
+  }
+  section.guitar {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: guitar;
+  }
+  section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 21px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

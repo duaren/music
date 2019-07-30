@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,700&display=swap');
+
+$primary-color: #FFCC00;
+$submit-btn-bg-color: black;
+$submit-btn-color: white;
+
+body, html {
+    margin: 0;
+}
+body {
+    height:100%;
+    font-family: 'Montserrat', sans-serif;
+    display: none;
+}
+
+header {
+    position: absolute;
+    padding: 1em;
+    display: flex;
+    z-index: 20;
+    justify-content: space-between;
+    width: calc(100% - 2em);
+    background: white;
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    a.logo {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        li a {
+            padding: 1em;
+            font-size: 1em;
+        }
+    }
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: auto;
+
+    section {
+        padding: 3em;
+
+        h1, h2, .read-btn {
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 1.4em;
+        }
+
+        .read-btn {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            background: url('../images/arrow.svg') no-repeat;
+            background-size: 8px;
+            background-position: 0 1px;
+            padding-left: 1em;
+        }
+        
+        .primary {
+            padding: 1.5em 1.5em 1.5em calc(3em + 25px);
+            border: 1px solid black;
+            color: goldenrod;
+            background-position: 3em;
+            display: inline-block;
+            margin-top: 3em;
+            margin-left: -3em;
+
+        }
+
+        .clipper {
+            overflow: hidden;
+        }
+    }
+
+    section.guitar {
+        padding-top:8em;
+        background: url('../images/guitar.jpg');
+        background-size: cover;
+        color: white;
+        p {
+            width: 70%;
+            font-size: 1.2em;
+            margin-bottom: 0;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+        }
+    }
+
+    section.sidebar, section.subscribe {
+        font-size: .9rem;
+        line-height: 1.6em;
+    }
+
+    section.sidebar {
+        background: $primary-color;
+
+        .read-btn {
+            margin-top: 2em;
+            display: block;
+            background-position: 0 .2em;
+        }
+    }
+
+    section.subscribe {
+
+        input {
+            width: calc(100% - 2em );
+            padding: 1em;
+            font-family: 'Montserrat';
+            margin-bottom: 1em;
+        }
+
+        button {
+            width: 100%;
+            background: $submit-btn-bg-color;
+            color: $submit-btn-color;
+            border: 2px solid black;
+            padding: 1em;
+            font-family: 'Montserrat';
+            margin: auto;
+        }
+    }
+}
+@media only screen and (max-width: 375px) {
+    header {
+        nav ul li a {
+            padding: .6em;
+            font-size: .8em;
+        }
+    }
+}
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1020px) {
+    header {
+        background: none;
+        a.logo {
+            color: goldenrod;
+        }
+    }
+
+    .wrapper {
+        grid-template-columns: 68% auto;
+        grid-template-rows: 60% auto;
+        grid-template-areas: 
+            "guitar featured"
+            "guitar subscribe";
+        height: 100vh;
+    }
+    
+    section.guitar {
+        grid-area: guitar;
+    }
+
+    section {
+        display: grid;
+        grid-template-rows: auto;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    html {
+        font-size: 21px;
+    }
+}
